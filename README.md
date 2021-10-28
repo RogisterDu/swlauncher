@@ -1,4 +1,4 @@
-# swlauncher
+# swlauncher For JP SoulWorker
 
 ## Project setup
 ```
