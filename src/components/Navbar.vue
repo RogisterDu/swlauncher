@@ -1,17 +1,13 @@
 <template>
   <div class="container">
-    <el-menu mode="vertical" default-active="2" class="menuArea">
-      <el-menu-item index="1">
-        <i class="el-icon-menu"></i>
-        <span slot="title">登录/注册</span>
-      </el-menu-item>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">官网</span>
-      </el-menu-item>
-      <el-menu-item index="3">
-        <i class="el-icon-menu"></i>
-        <span slot="title">常用功能</span>
+    <el-menu mode="vertical" default-active="1" class="menuArea" router>
+      <el-menu-item
+        :index="Action_item.index"
+        v-for="(Action_item, Act_i) in functionList"
+        :key="Act_i"
+      >
+        <i :class="Action_item.class"></i>
+        <span slot="title">{{ Action_item.name }}</span>
       </el-menu-item>
     </el-menu>
   </div>
@@ -20,6 +16,32 @@
 <script>
 export default {
   name: "Navbar",
+  data() {
+    return {
+      functionList: [
+        {
+          name: "登录/注册",
+          index: "/",
+          class: "el-icon-monitor",
+        },
+        {
+          name: "官网",
+          index: "/OfficalWebSite",
+          class: "el-icon-s-promotion",
+        },
+        {
+          name: "常用功能",
+          index: "/CommonFunction",
+          class: "el-icon-s-operation",
+        },
+        {
+          name: "设置",
+          index: "/SettingConfig",
+          class: "el-icon-set-up",
+        },
+      ],
+    };
+  },
   methods: {},
 };
 </script>

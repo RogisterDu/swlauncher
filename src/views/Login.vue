@@ -19,7 +19,9 @@
           clearable
           class="inputbox"
         ></el-input>
-        <el-link type="primary" class="link">注册账户</el-link>
+        <el-link type="primary" class="link" @click="toRegister"
+          >注册账户</el-link
+        >
       </el-form-item>
       <el-form-item label="密码:" prop="password">
         <el-input
@@ -79,9 +81,17 @@ export default {
     };
   },
   methods: {
-    tologin() {
-      shell.openExternal("https://www.baidu.com");
-      // window.open("www.baidu.com", "_blank");
+    tologin() {},
+    toRegister() {
+      if (this.ruleForm.website === "WeMade") {
+        shell.openExternal(
+          "https://customer.gamecom.jp/Regist/Default.aspx?GameCode=SW"
+        );
+      } else if (this.ruleForm.website === "Hangame") {
+        shell.openExternal(
+          "https://customer.gamecom.jp/Regist/Default.aspx?GameCode=SW"
+        );
+      }
     },
   },
 };
