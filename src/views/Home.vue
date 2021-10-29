@@ -4,9 +4,7 @@
       <!--      <el-aside class="functionmenu" width="50px" height="100%">-->
       <Navbar></Navbar>
       <!--      </el-aside>-->
-      <el-main>
-        <router-view></router-view>
-      </el-main>
+      <router-view></router-view>
     </el-container>
   </div>
 </template>

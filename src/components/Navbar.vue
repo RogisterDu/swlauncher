@@ -1,12 +1,6 @@
 <template>
   <div class="container">
-    <el-menu
-      mode="vertical"
-      default-active="2"
-      class="menuArea"
-      @open="handleOpen"
-      @close="handleClose"
-    >
+    <el-menu mode="vertical" default-active="2" class="menuArea">
       <el-menu-item index="1">
         <i class="el-icon-menu"></i>
         <span slot="title">登录/注册</span>
@@ -26,14 +20,7 @@
 <script>
 export default {
   name: "Navbar",
-  methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    },
-  },
+  methods: {},
 };
 </script>
 

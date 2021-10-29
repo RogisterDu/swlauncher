@@ -13,9 +13,10 @@ protocol.registerSchemesAsPrivileged([
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 600,
-    height: 400,
+    width: 650,
+    height: 450,
     resizable: false,
+    frame: false,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
@@ -66,6 +67,13 @@ app.on("ready", async () => {
   const { Menu } = require("electron");
   Menu.setApplicationMenu(null);
   await createWindow();
+  const { shell, app } = require("electron");
+  app.on("web-contents-created", (e, webContents) => {
+    webContents.on("new-window", (event, url) => {
+      event.preventDefault();
+      shell.openExternal(url);
+    });
+  });
 });
 
 // Exit cleanly on request from parent process in development mode.
