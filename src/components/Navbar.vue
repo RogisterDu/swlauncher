@@ -2,6 +2,7 @@
   <div class="container">
     <el-menu mode="vertical" default-active="1" class="menuArea" router>
       <el-menu-item
+        style="width: 100%"
         :index="Action_item.index"
         v-for="(Action_item, Act_i) in functionList"
         :key="Act_i"

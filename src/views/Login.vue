@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2 style="align-self: center">SoulWoker 登录器</h2>
+    <h2 style="align-self: center">SoulWorker 登录器</h2>
     <el-form
       :model="ruleForm"
       :rules="rules"
@@ -103,7 +103,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //align-items: center;
+  align-items: center;
 }
 .inputbox {
   margin-left: 10px;
